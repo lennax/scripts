@@ -1,16 +1,18 @@
+#!/usr/bin/env python
 # 7 February 2011		Lenna Xiao Ping Peterson
 # interactive binomial probability finder for stat 503
 
 ### factorial function written by jmelloy
 
-def factorial(x):
-    total = 1
-    while(x > 1):
-            total = total * x
-            x = x -  1
-    return total
+#def factorial(x):
+    #total = 1
+    #while(x > 1):
+            #total = total * x
+            #x = x -  1
+    #return total
 
 def factorial(x):
+    """Recursive factorial function"""
     if x <= 1:
             return 1
     return x * factorial(x - 1)
@@ -30,10 +32,10 @@ def combine(n,k):
 			numerator *= n-i
 		return numerator / factorial(k)
 
-n = input("Number of trials? ")
-p = input("Probability of success? ")
+n = int(raw_input("Number of trials? "))
+p = float(raw_input("Probability of success? "))
 if p < 0 or p > 1:
-	p = input("p must be between 0 and 1. Try again: ")
+	p = float(raw_input("p must be between 0 and 1. Try again: "))
 
 while n < 14: 
 	k = raw_input("Number of successes (or Quit)? ")
